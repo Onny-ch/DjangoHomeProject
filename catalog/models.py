@@ -30,8 +30,10 @@ class Product(models.Model):
         on_delete=models.SET_NULL,
     )
     price = models.FloatField(verbose_name="Цена продукта")
-    created_at = models.DateField(verbose_name="Дата создания")
-    updated_at = models.DateField(verbose_name="Дата последнего изменения")
+    created_at = models.DateField(auto_now_add=True, verbose_name="Дата создания")
+    updated_at = models.DateField(
+        auto_now=True, verbose_name="Дата последнего изменения"
+    )
 
     def __str__(self):
         return self.name
