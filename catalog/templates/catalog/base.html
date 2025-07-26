@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Astro v5.9.2">
-    <title>Product example · Bootstrap v5.3</title>
+    <title>Blog-Catalog</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/product/">
     <script src="{% static 'js/color-modes.js' %}"></script>
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
@@ -99,7 +99,7 @@
     </symbol>
 </svg>
 
-{% include 'includes/top_menu.html' %}
+{% include 'catalog/includes/top_menu.html' %}
 
 <main>
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
@@ -116,6 +116,7 @@
                     <use xlink:href="#chevron-right"></use>
                 </svg>
             </a></div>
+            <a class="btn btn-primary mt-3" href="{% url 'catalog:product_create' %}" role="button">Добавить продукт</a>
         </div>
         <div class="product-device shadow-sm d-none d-md-block"></div>
         <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>

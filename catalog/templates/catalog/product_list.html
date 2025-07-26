@@ -1,0 +1,28 @@
+{% extends 'catalog/base.html' %}
+{% load my_tags %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        {% for product in object_list %}
+            <div class="col-12 col-md-3 mb-4">
+                <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden d-flex flex-column">
+                    <div class="my-3 py-3">
+                        <h2 class="display-5">{{ product.name }}</h2>
+                        <div class="btn-group">
+                            <a class="btn btn-primary" href="{% url 'catalog:product_detail' product.pk %}" role="button">Просмотр</a>
+                            <a class="btn btn-secondary" href="{% url 'catalog:product_update' product.pk %}" role="button">Редактировать</a>
+                            <a class="btn btn-danger" href="{% url 'catalog:product_confirm_delete' product.pk %}" role="button">Удалить</a>
+                        </div>
+                        <p class="lead">{{ product.description|truncatechars:100 }}</p></div>
+                    <div class="bg-body-tertiary shadow-sm mx-auto"
+                         style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+                        <img src="{{ product.image | media_filter }}"
+                             class="img-fluid"
+                             style="object-fit: cover; object-position: center;">
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
