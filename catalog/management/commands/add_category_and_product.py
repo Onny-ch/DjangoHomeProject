@@ -4,7 +4,7 @@ from catalog.models import Category, Product
 
 
 class Command(BaseCommand):
-    help = "Add categories and products to the database"
+    help = "Add categories and catalog to the database"
 
     # def handle(self, *args, **kwargs):
     #     Category.objects.all().delete()
@@ -17,7 +17,7 @@ class Command(BaseCommand):
     #         name="Овощи", description="Все овощи, и тут так просто, да."
     #     )
     #
-    #     products = [
+    #     catalog = [
     #         {
     #             "name": "Яблоко",
     #             "description": "Фрукт, растет из земли, желтый",
@@ -44,15 +44,15 @@ class Command(BaseCommand):
     #         },
     #     ]
     #
-    #     for product_data in products:
-    #         product, created = Product.objects.get_or_create(**product_data)
+    #     for product_data in catalog:
+    #         catalog, created = Product.objects.get_or_create(**product_data)
     #         if created:
     #             self.stdout.write(
-    #                 self.style.SUCCESS(f'Успешно создан продукт "{product.name}".')
+    #                 self.style.SUCCESS(f'Успешно создан продукт "{catalog.name}".')
     #             )
     #         else:
     #             self.stdout.write(
-    #                 self.style.SUCCESS(f'Проудкт "{product.name}" уже существует!')
+    #                 self.style.SUCCESS(f'Проудкт "{catalog.name}" уже существует!')
     #             )
 
     def handle(self, *args, **kwargs):

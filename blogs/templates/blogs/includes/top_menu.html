@@ -20,11 +20,11 @@
                         </svg>
                     </a></li>
                     <li class="nav-item"><a class="nav-link" href="/">Главная</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Продукты</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Особенности</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'catalog:product_list' %}">Каталог</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'blogs:blogs_list' %}">Блог</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Поддержка</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Цены</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/contacts">Контакты</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'catalog:contacts' %}">Контакты</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" aria-label="Cart">
                         <svg class="bi" width="24" height="24" aria-hidden="true">
                             <use xlink:href="#cart"></use>
