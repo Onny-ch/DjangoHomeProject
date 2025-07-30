@@ -35,10 +35,8 @@ urlpatterns = [
         CategoryDeleteView.as_view(),
         name="category_confirm_delete",
     ),
-
     path("", HomeView.as_view(), name="home_view"),
     path("contacts/", ContactsView.as_view(), name="contacts"),
-
     path("product_list/", ProductListView.as_view(), name="product_list"),
     path(
         "product_detail/<int:pk>/", ProductDetailView.as_view(), name="product_detail"

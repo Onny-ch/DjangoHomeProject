@@ -51,7 +51,7 @@ class ProductDetailView(DetailView):
 class ProductCreateView(CreateView):
     model = Product
     form_class = ProductForm
-    template_name = 'catalog/product_form.html'
+    template_name = "catalog/product_form.html"
     success_url = reverse_lazy("catalog:product_list")
 
 
@@ -72,7 +72,7 @@ class HomeView(TemplateView):
 
 class ContactsView(TemplateView):
     template_name = "catalog/contacts.html"
-    #form_class = ContactForm
+    # form_class = ContactForm
 
     def post(self, request, *args, **kwargs):
         name = request.POST.get("name")

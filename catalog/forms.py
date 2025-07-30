@@ -3,7 +3,17 @@ from django.core.exceptions import ValidationError
 
 from catalog.models import Product, Category
 
-Forbidden_Words = ['казино', 'биржа', 'обман', 'криптовалюта', 'дешево', 'полиция', 'крипта', 'бесплатно', 'радар', ]
+Forbidden_Words = [
+    "казино",
+    "биржа",
+    "обман",
+    "криптовалюта",
+    "дешево",
+    "полиция",
+    "крипта",
+    "бесплатно",
+    "радар",
+]
 
 
 class ProductForm(forms.ModelForm):
@@ -18,31 +28,31 @@ class ProductForm(forms.ModelForm):
         ]
 
     def clean_price(self):
-        price = self.cleaned_data['price']
+        price = self.cleaned_data["price"]
         if price < 0:
-            self.add_error("price", "Цена не может быть ниже нуля")
+            raise ValidationError("Цена не может быть ниже нуля")
         return price
 
     def clean_name(self):
-        name = self.cleaned_data['name']
-        name_list = name.split(' ')
+        name = self.cleaned_data["name"]
+        name_list = name.split(" ")
         for el in name_list:
             if el.strip().lower() in Forbidden_Words:
-                self.add_error('name', 'Нельзя использовать данные слова')
+                self.add_error("name", "Нельзя использовать данные слова")
         for word in Forbidden_Words:
             if word in name:
-                self.add_error('name', 'Нельзя использовать данные слова')
+                self.add_error("name", "Нельзя использовать данные слова")
         return name
 
     def clean_description(self):
-        description = self.cleaned_data['description']
-        description_list = description.split(' ')
+        description = self.cleaned_data["description"]
+        description_list = description.split(" ")
         for el in description_list:
             if el.strip().lower() in Forbidden_Words:
-                self.add_error('description', 'Нельзя использовать данные слова')
+                self.add_error("description", "Нельзя использовать данные слова")
         for word in Forbidden_Words:
             if word in description:
-                self.add_error('description', 'Нельзя использовать данные слова')
+                self.add_error("description", "Нельзя использовать данные слова")
         return description
 
     def __init__(self, *args, **kwargs):
