@@ -1,0 +1,14 @@
+{% extends 'catalog/base.html' %}
+{% load my_tags %}
+{% block content %}
+<div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 py-3">
+            <h2 class="display-5">{{ object.name }}</h2>
+            <div class="btn-group">
+                <a class="btn btn-primary" href="{% url 'catalog:category_list' %}" role="button">К списку категорий</a>
+            </div>
+            <p class="lead">{{ object.description }}</p></div>
+    </div>
+</div>
+{% endblock %}
