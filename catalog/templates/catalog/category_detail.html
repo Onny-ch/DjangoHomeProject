@@ -6,13 +6,9 @@
         <div class="my-3 py-3">
             <h2 class="display-5">{{ object.name }}</h2>
             <div class="btn-group">
-                <a class="btn btn-primary" href="{% url 'catalog:product_list' %}" role="button">К списку продуктов</a>
+                <a class="btn btn-primary" href="{% url 'catalog:category_list' %}" role="button">К списку категорий</a>
             </div>
             <p class="lead">{{ object.description }}</p></div>
-        <div class="bg-body-tertiary shadow-sm mx-auto"
-             style="width: 30%; height: 300px; border-radius: 21px 21px 0 0;">
-            <img src="{{ product.image | media_filter }}">
-        </div>
     </div>
 </div>
 {% endblock %}

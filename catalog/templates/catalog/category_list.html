@@ -1,0 +1,22 @@
+{% extends 'catalog/base.html' %}
+{% load my_tags %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        {% for category in object_list %}
+            <div class="col-12 col-md-3 mb-4">
+                <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden d-flex flex-column">
+                    <div class="my-3 py-3">
+                        <h2 class="display-5">{{ category.name }}</h2>
+                        <div class="btn-group">
+                            <a class="btn btn-primary" href="{% url 'catalog:category_detail' category.pk %}" role="button">Просмотр</a>
+                            <a class="btn btn-secondary" href="{% url 'catalog:category_update' category.pk %}" role="button">Редактировать</a>
+                            <a class="btn btn-danger" href="{% url 'catalog:category_confirm_delete' category.pk %}" role="button">Удалить</a>
+                        </div>
+                        <p class="lead">{{ category.description|truncatechars:100 }}</p></div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

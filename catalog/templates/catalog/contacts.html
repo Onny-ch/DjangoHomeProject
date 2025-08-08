@@ -11,7 +11,8 @@
     <h5 class="my-0 mr-md-auto font-weight-normal">Skystore</h5>
     <nav class="ms-5">
         <a class="p-2 btn btn-outline-primary" href="/">Главная</a>
-        <a class="p-2 btn btn-outline-primary" href="{% url 'catalog:product_list' %}">Каталог</a>
+        <a class="p-2 btn btn-outline-primary" href="{% url 'catalog:category_list' %}">Категории</a>
+        <a class="p-2 btn btn-outline-primary" href="{% url 'catalog:product_list' %}">Продукты</a>
         <a class="p-2 btn btn-outline-primary" href="{% url 'blogs:blogs_list' %}">Блог</a>
         <a class="p-2 btn btn-outline-primary" href="{% url 'catalog:contacts' %}">Контакты</a>
     </nav>
@@ -56,8 +57,8 @@
                             <input type="text" name="name" class="form-control" id="name" placeholder="Ваше имя" required>
                         </div>
                         <div class="mb-3">
-                            <label for="phone">Телефон</label>
-                            <input type="text" name="phone" class="form-control" id="phone" placeholder="Контактный телефон" required>
+                            <label for="phone">Почта</label>
+                            <input type="text" name="email" class="form-control" id="phone" placeholder="Ваша почта" required>
                         </div>
                         <div class="mb-3">
                             <label for="message">Сообщение</label>
