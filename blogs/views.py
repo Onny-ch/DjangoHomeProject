@@ -33,6 +33,14 @@ class BlogsCreateView(CreateView):
     )
     success_url = reverse_lazy("blogs:blogs_list")
 
+    def form_valid(self, form):
+        blog = form.save()
+        user = self.request.user
+        blog.creator = user
+        blog.save()
+        return super().form_valid(form)
+
+
 
 class BlogsUpdateView(UpdateView):
     model = Blogs

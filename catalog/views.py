@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.views.generic import (
@@ -22,7 +23,7 @@ class CategoryDetailView(DetailView):
     model = Category
 
 
-class CategoryCreateView(CreateView):
+class CategoryCreateView(CreateView, LoginRequiredMixin):
     model = Category
     form_class = CategoryForm
     template_name = "catalog/category_form.html"
