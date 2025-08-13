@@ -119,6 +119,7 @@
             {% if user.is_staff %}
             <a class="btn btn-primary mt-3" href="{% url 'catalog:category_create' %}" role="button">Добавить категорию</a>
             <a class="btn btn-primary mt-3" href="{% url 'catalog:product_create' %}" role="button">Добавить продукт</a>
+            <a class="btn btn-primary mt-3" href="{% url 'blogs:blogs_create' %}" role="button">Добавить запись блога</a>
             {% endif %}
         </div>
         <div class="product-device shadow-sm d-none d-md-block"></div>
