@@ -42,7 +42,6 @@ class BlogsCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-
 class BlogsUpdateView(LoginRequiredMixin, UpdateView):
     model = Blogs
     fields = (

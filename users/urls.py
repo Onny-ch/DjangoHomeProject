@@ -8,8 +8,8 @@ from users.views import RegisterView, email_verification
 app_name = UsersConfig.name
 
 urlpatterns = [
-    path('login/', LoginView.as_view(template_name='login.html'), name='login'),
-    path('register/', RegisterView.as_view(), name='register'),
-    path('logout/', LogoutView.as_view(next_page='catalog:home_view'), name='logout'),
-    path('email_confirm/<str:token>/', email_verification, name='email_confirm')
+    path("login/", LoginView.as_view(template_name="login.html"), name="login"),
+    path("register/", RegisterView.as_view(), name="register"),
+    path("logout/", LogoutView.as_view(next_page="catalog:home_view"), name="logout"),
+    path("email_confirm/<str:token>/", email_verification, name="email_confirm"),
 ]

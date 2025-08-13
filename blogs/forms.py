@@ -6,8 +6,11 @@ from blogs.models import Blogs
 class BlogsForm(forms.ModelForm):
     class Meta:
         model = Blogs
-        fields = ["title", "content", "preview",]
-
+        fields = [
+            "title",
+            "content",
+            "preview",
+        ]
 
     def __init__(self, *args, **kwargs):
         super(BlogsForm, self).__init__(*args, **kwargs)
