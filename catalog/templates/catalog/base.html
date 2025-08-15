@@ -116,8 +116,11 @@
                     <use xlink:href="#chevron-right"></use>
                 </svg>
             </a></div>
+            {% if user.is_staff %}
             <a class="btn btn-primary mt-3" href="{% url 'catalog:category_create' %}" role="button">Добавить категорию</a>
             <a class="btn btn-primary mt-3" href="{% url 'catalog:product_create' %}" role="button">Добавить продукт</a>
+            <a class="btn btn-primary mt-3" href="{% url 'blogs:blogs_create' %}" role="button">Добавить запись блога</a>
+            {% endif %}
         </div>
         <div class="product-device shadow-sm d-none d-md-block"></div>
         <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
@@ -141,34 +144,24 @@
             <ul class="list-unstyled text-small">
                 <li><a class="link-secondary text-decoration-none" href="#">Cool stuff</a></li>
                 <li><a class="link-secondary text-decoration-none" href="#">Random feature</a></li>
-                <li><a class="link-secondary text-decoration-none" href="#">Team feature</a></li>
-                <li><a class="link-secondary text-decoration-none" href="#">Stuff for developers</a></li>
-                <li><a class="link-secondary text-decoration-none" href="#">Another one</a></li>
-                <li><a class="link-secondary text-decoration-none" href="#">Last time</a></li>
             </ul>
         </div>
         <div class="col-6 col-md"><h5>Resources</h5>
             <ul class="list-unstyled text-small">
                 <li><a class="link-secondary text-decoration-none" href="#">Resource name</a></li>
                 <li><a class="link-secondary text-decoration-none" href="#">Resource</a></li>
-                <li><a class="link-secondary text-decoration-none" href="#">Another resource</a></li>
-                <li><a class="link-secondary text-decoration-none" href="#">Final resource</a></li>
             </ul>
         </div>
         <div class="col-6 col-md"><h5>Resources</h5>
             <ul class="list-unstyled text-small">
                 <li><a class="link-secondary text-decoration-none" href="#">Business</a></li>
                 <li><a class="link-secondary text-decoration-none" href="#">Education</a></li>
-                <li><a class="link-secondary text-decoration-none" href="#">Government</a></li>
-                <li><a class="link-secondary text-decoration-none" href="#">Gaming</a></li>
             </ul>
         </div>
         <div class="col-6 col-md"><h5>About</h5>
             <ul class="list-unstyled text-small">
                 <li><a class="link-secondary text-decoration-none" href="#">Team</a></li>
                 <li><a class="link-secondary text-decoration-none" href="#">Locations</a></li>
-                <li><a class="link-secondary text-decoration-none" href="#">Privacy</a></li>
-                <li><a class="link-secondary text-decoration-none" href="#">Terms</a></li>
             </ul>
         </div>
     </div>

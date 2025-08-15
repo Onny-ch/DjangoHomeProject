@@ -1,4 +1,4 @@
-{% extends 'blogs/base.html' %}
+{% extends 'catalog/base.html' %}
 {% load my_tags %}
 {% block content %}
 <div class="container-fluid">
@@ -11,8 +11,10 @@
                             <h2 class="display-5">{{ entry.title }}</h2>
                             <div class="btn-group">
                                 <a class="btn btn-primary" href="{% url 'blogs:blogs_detail' entry.pk %}" role="button">Просмотр</a>
+                                {% if entry.creator == user %}
                                 <a class="btn btn-secondary" href="{% url 'blogs:blogs_update' entry.pk %}" role="button">Редактировать</a>
                                 <a class="btn btn-danger" href="{% url 'blogs:blogs_confirm_delete' entry.pk %}" role="button">Удалить</a>
+                                {% endif %}
                             </div>
                             <p class="lead">{{ entry.content|truncatechars:100 }}</p></div>
                         <div class="bg-body-tertiary shadow-sm mx-auto"
