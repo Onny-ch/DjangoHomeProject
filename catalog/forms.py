@@ -92,6 +92,14 @@ class ProductForm(forms.ModelForm):
         )
 
 
+class ProductModeratorForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = [
+            "publication_sign",
+        ]
+
+
 class CategoryForm(forms.ModelForm):
     class Meta:
         model = Product
