@@ -96,7 +96,7 @@ class ProductModeratorForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = [
-            "publication_sign",
+            "is_published",
         ]
 
 

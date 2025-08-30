@@ -58,7 +58,7 @@ class Product(models.Model):
         help_text="Укажите количество просмотров",
         default=0,
     )
-    publication_sign = models.BooleanField(default=False)
+    is_published = models.BooleanField(default=False)
     owner = models.ForeignKey(
         User,
         verbose_name="Владелец",
