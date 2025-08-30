@@ -116,10 +116,10 @@
                     <use xlink:href="#chevron-right"></use>
                 </svg>
             </a></div>
-            {% if user.is_staff or user.is_superuser or perms.catalog.add_category %}
+            {% if perms.catalog.add_category %}
             <a class="btn btn-primary mt-3" href="{% url 'catalog:category_create' %}" role="button">Добавить категорию</a>
             {% endif %}
-            {% if user.is_staff or user.is_superuser or perms.catalog.add_product %}
+            {% if perms.catalog.add_product %}
             <a class="btn btn-primary mt-3" href="{% url 'catalog:product_create' %}" role="button">Добавить продукт</a>
             {% endif %}
             {% if user.is_authenticated %}
