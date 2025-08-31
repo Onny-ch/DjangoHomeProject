@@ -92,6 +92,14 @@ class ProductForm(forms.ModelForm):
         )
 
 
+class ProductModeratorForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = [
+            "is_published",
+        ]
+
+
 class CategoryForm(forms.ModelForm):
     class Meta:
         model = Product
