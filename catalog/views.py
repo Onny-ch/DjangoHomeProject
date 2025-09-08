@@ -13,6 +13,7 @@ from django.views.generic import (
 
 from catalog.models import Product, Category
 from catalog.forms import ProductForm, CategoryForm, ProductModeratorForm
+from catalog.services import ProductServices
 
 
 class CategoryListView(ListView):
@@ -44,6 +45,9 @@ class CategoryDeleteView(LoginRequiredMixin, DeleteView):
 
 class ProductListView(ListView):
     model = Product
+
+    def get_queryset(self):
+        return ProductServices.get_products_from_cache()
 
 
 class ProductDetailView(DetailView):
@@ -78,6 +82,15 @@ class ProductUpdateView(LoginRequiredMixin, UpdateView):
 class ProductDeleteView(LoginRequiredMixin, DeleteView):
     model = Product
     success_url = reverse_lazy("catalog:product_list")
+
+
+class ProductListFromCategoryView(ListView):
+    model = Product
+    template_name = "catalog/product_list_from_category.html"
+
+    def get_queryset(self):
+        category_id = self.kwargs["category_id"]
+        return ProductServices.get_products_from_category(category_id)
 
 
 class HomeView(TemplateView):
