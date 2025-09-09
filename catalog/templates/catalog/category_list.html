@@ -10,6 +10,9 @@
                         <h2 class="display-5">{{ category.name }}</h2>
                         <div class="btn-group">
                             <a class="btn btn-primary" href="{% url 'catalog:category_detail' category.pk %}" role="button">Просмотр</a>
+                            <a class="btn btn-primary" href="{% url 'catalog:product_list_from_category' category.pk %}" role="button">Список продуктов</a>
+                        </div>
+                        <div class="btn-group">
                             {% if user.is_staff %}
                             <a class="btn btn-secondary" href="{% url 'catalog:category_update' category.pk %}" role="button">Редактировать</a>
                             <a class="btn btn-danger" href="{% url 'catalog:category_confirm_delete' category.pk %}" role="button">Удалить</a>
